@@ -9,3 +9,4 @@ kubectl get pods awx-operator-controller-manager-647f4c5c7d-hphht -o=custom-colu
 
 ---------------------------------------------------------------------------------------
 
+kubectl exec mypod -c ruby-container -i -t -- bash -il
