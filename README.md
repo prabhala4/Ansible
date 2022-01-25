@@ -57,5 +57,33 @@ kubectl exec awx-75bd7d77d5-v78wc --namespace awx -c awx-web -i -t -- bash -il
       msg: "{{ result }}"
 
 
+-----------------------------------------------------------------------------------
 
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - cisco.ucs
+
+  tasks:
+  - name: Configure Service Profile from Template
+    ucs_service_profile_from_template:
+      hostname: 10.240.4.90
+      username: admin
+      password: "{{ password }}"
+      name: "{{ host_name }}"
+      source_template: compute-nodes-m5
+      org_dn: org-root/org-SDX
+      state:  present
+  - name: Query UCS Distinguished Names
+    ucs_query:
+      hostname: 10.240.4.90
+      username: admin
+      password: "{{ password }}"
+      distinguished_names: sys/chassis-1/blade-1/adaptor-1/host-eth-1
+      delegate_to: localhost
+    register: result
+  - debug:
+      msg: "{{ result }}"
 
