@@ -89,4 +89,14 @@ https://computingforgeeks.com/how-to-install-ansible-awx-on-ubuntu-linux/
     register: result
   - debug:
       msg: "{{ result }}"
+---------------------------------------------------------------------------------
+
+1) Create Service profile from template 
+2) Attach  Service profile  to a  server
+3) Record IQN ,  WWN details
+4) Login in to Pure , create a lun using those IQN details
+5) Login KVM of UCS
+6) Activate virtual drivers, insert esxi ISO  , install on the boot lun created above.
+7) Add management IP , DNS,NTP and add it to  the vcenter.
+
 
