@@ -59,6 +59,9 @@ kubectl exec awx-75bd7d77d5-v78wc --namespace awx -c awx-web -i -t -- bash -il
 
 -----------------------------------------------------------------------------------
 
+https://computingforgeeks.com/how-to-install-ansible-awx-on-ubuntu-linux/
+---------------------------------------------------------------
+
 ---
 - hosts: localhost
   connection: local
