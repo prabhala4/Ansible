@@ -1,0 +1,7 @@
+- name: Configure Profile from Template
+  cisco.ucs.ucs_service_profile_from_template:
+    hostname:
+    username:
+    password:
+    name:
+    source_template:
