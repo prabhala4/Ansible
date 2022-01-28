@@ -1,7 +1,7 @@
 - name: Configure Profile from Template
   cisco.ucs.ucs_service_profile_from_template:
-    hostname:
-    username:
-    password:
-    name:
-    source_template:
+    hostname: 10.241.16.60
+    username: admin
+    password: SDNlan01@
+    name: temp-del-php
+    source_template: testesxi
