@@ -10,7 +10,7 @@ kubectl get pods awx-operator-controller-manager-647f4c5c7d-hphht -o=custom-colu
 
 
 kubectl get pods awx-75bd7d77d5-v78wc  -o=custom-columns=NameSpace:.metadata.namespace,NAME:.metadata.name,CONTAINERS:.spec.containers[*].name -n awx
-
+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
 
 ---------------------------------------------------------------------------------------
 ## Enter container 
