@@ -5,3 +5,24 @@
     password: SDNlan01@
     name: temp-del-php
     source_template: testesxi
+
+
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+  - name: Attempt to change association once a minute for up to 10 minutes
+    cisco.ucs.ucs_service_profile_association:
+      hostname: 10.240.4.90
+      username: admin
+      password: "{{ password }}"
+      service_profile_name: "{{ host_name }}"
+      server_assignment: server
+      server_dn: sys/chassis-"{{ chassis_number }}"/blade-"{{ blade_number }}"
+      org_dn: org-root/org-SDX
+    register: result
+    until: result.assign_state == 'assigned' and result.assoc_state == 'associated'
+    retries: 10
+    delay: 60
